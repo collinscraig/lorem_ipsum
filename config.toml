@@ -1,4 +1,32 @@
+GoogleAnalytics = "UA-123-45"
 baseURL = "http://example.org/"
+enableGitInfo = true
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "lorem"
+theme = "sapling-theme"
+title = "Sapling"
+[[menu.sidebar]]
+identifier = "section-1"
+name = "Using Sapling"
+weight = 1
+[[menu.sidebar]]
+identifier = "section-2"
+name = "About"
+weight = 2
+[[menu.sidebar]]
+parent = "section-2"
+name = "Forestry.io"
+url = "https://forestry.io"
+[outputs]
+home = ["HTML", "JSON"]
+[params]
+codehighlighting = true
+logo = "svg/acme.svg"
+[params.repo]
+id = "forestryio/sapling-site"
+provider = "github"
+[[params.versions]]
+Name = "1.0.0"
+URL = ""
+[[params.versions]]
+Name = "2.0.0"
+URL = "/v2/"

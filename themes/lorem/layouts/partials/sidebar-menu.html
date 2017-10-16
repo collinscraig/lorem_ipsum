@@ -1,9 +1,0 @@
-<h2 class="b-sidebar__header">{{ (index . 0).Menu | humanize | title }}</h2>
-<ul class="b-sidebar__menu">
-  {{- range $key, $value := . }}
-  <li class="b-sidebar__menu-item{{ if or ($.IsMenuCurrent .Menu .) ($.HasMenuCurrent .Menu .) }} s-is__active{{ end -}}">
-    <a href="{{ $value.URL }}" title="{{ $value.Name }}">{{ $value.Name }}</a>
-  </li>
-  {{ end -}}
-</ul>
-
