@@ -1,0 +1,17 @@
+{{ if or .PrevInSection .NextInSection }}
+<div class="b-pagination"> 
+  {{if and .PrevInSection (not (eq .PrevInSection .NextInSection)) }}
+  <a href="{{ .PrevInSection.Permalink }}" class="b-pagination__prev" title="{{ .PrevInSection.Title }}">
+    Previous:
+    {{ .PrevInSection.Title }}
+  </a>
+  {{end}}
+
+  {{if and .NextInSection (not (eq .PrevInSection .NextInSection)) }}
+    <a href="{{.NextInSection.Permalink }}" class="b-pagination__next" title="{{ .NextInSection.Title }} ">
+      Next:
+      {{ .NextInSection.Title }}
+    </a>
+    {{ end }}
+</div>
+{{ end }}

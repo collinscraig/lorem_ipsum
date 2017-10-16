@@ -1,0 +1,4 @@
+{{- if or (.Get 0) (.Get "language") }}
+{{- $inner := (replaceRE "(?m)^[[:blank:]]+" "$1" (printf "%s" .Inner)) -}}
+<pre class="b-codetabs__block js-codetabs__block"><code>{{- $inner -}}</code></pre> 
+{{ end -}}

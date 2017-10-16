@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{- partial "sidebar.html" . -}}
+<div class="b-content l-right">
+  <div class="b-content__wrapper">
+    <h1 class="b-content__title">{{ .Title }}{{ if .IsDraft }} (Draft){{ end }}</h1>
+    <div class="b-content__body">
+      {{ .Content }}
+      {{ partial "pagination.html" . }}
+      {{ partial "git_support.html" . }}
+    </div>
+  </div>
+</div>
+{{ end }}
